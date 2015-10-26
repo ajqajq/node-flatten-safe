@@ -1,11 +1,18 @@
 /**
  * Created by weagle08 on 10/21/2015.
  */
+'use strict';
+
 var ModuleTree = require('./lib/ModuleTree');
-var ChainSaw = require('./lib/ChainSaw');
+var Lumberjack = require('./lib/Lumberjack');
 
 var tree = new ModuleTree('/home/ben/dev/flattent-test/');
 tree.grow().then(function(){
     tree.print();
-    //ChainSaw.grindItDown(tree);
+    var ljack = new Lumberjack(tree);
+    ljack.survey(tree);
+    let surveys = ljack.surveys;
+    for(let s of surveys) {
+        s.print();
+    }
 });

@@ -1,4 +1,9 @@
 {
   "name": "node-flatten-safe",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "del": "^2.0.2",
+    "jsonfile": "^2.2.3",
+    "q": "^1.4.1"
+  }
 }
