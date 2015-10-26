@@ -12,7 +12,5 @@ tree.grow().then(function(){
     var ljack = new Lumberjack(tree);
     ljack.survey(tree);
     let surveys = ljack.surveys;
-    for(let s of surveys) {
-        s.print();
-    }
+    ljack.printSurveyResults();
 });
