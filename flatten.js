@@ -2,12 +2,19 @@
 
 var Acorn = require('./lib/Acorn.js');
 var fs = require('fs');
+var path = require('path');
 var rimraf = require('rimraf');
 var FOLDER_ARG_OFFSET = 2;
 var DEFAULT_FOLDER_ARG_OFFSET = 1;
 var folderToFlatten = process.argv[FOLDER_ARG_OFFSET];
+console.log ('args = ');
+console.log (process.argv[0]);
+console.log (process.argv[1]);
+console.log (process.argv[2]);
+
 if (typeof folderToFlatten == 'undefined') {
-    folderToFlatten = process.argv[DEFAULT_FOLDER_ARG_OFFSET];
+    folderToFlatten = path.dirname(process.argv[DEFAULT_FOLDER_ARG_OFFSET]);
+    console.log ("final = " + folderToFlatten);
 }
 var acorn = new Acorn(folderToFlatten);
 acorn.grow().then((tree) => {
